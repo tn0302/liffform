@@ -72,32 +72,6 @@
       event.preventDefault();
       $.post( 'https://script.google.com/macros/s/AKfycbynmNsC6t6rsLVAzNFUp6vy_Kv6B_2_wjFW1qDbb5zJ-YAnmtNbp3QWh1RLJHHwe-Db/exec', $('form').serialize() );
     });
-     // closeWindow call
-    
-   // sendMessages call
-    $document.getElementById('closeWindowButton').addEventListener('click', function() {
-        if (!liff.isInClient()) {
-            sendAlertIfNotInClient();
-        } else {
-            liff.sendMessages([{
-                'type': 'text',
-                'text': "申し込み完了しました"
-            }]).then(function() {
-                window.alert('Message sent');
-            }).catch(function(error) {
-                window.alert('Error sending message: ' + error);
-            });
-          
-    $document.getElementById('closeWindowButton').addEventListener('click', function() {
-        if (!liff.isInClient()) {
-            sendAlertIfNotInClient();
-        } else {
-            liff.closeWindow();
-        }
-    });
-
-        }
-    });
   </script>
 </body>
 </html>
