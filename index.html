@@ -71,9 +71,12 @@
     $('form').submit(function( event ) {
       event.preventDefault();
       $.post( 'https://script.google.com/macros/s/AKfycbynmNsC6t6rsLVAzNFUp6vy_Kv6B_2_wjFW1qDbb5zJ-YAnmtNbp3QWh1RLJHHwe-Db/exec', $('form').serialize() );
+      var msg = `申し込み受付けました`;
+        sendText(msg);
+
+        return false;
     });
     
-   liff.closeWindow();
   </script>
 </body>
 </html>
