@@ -72,17 +72,9 @@
       $.when(
         event.preventDefault();
       $.post( 'https://script.google.com/macros/s/AKfycbynmNsC6t6rsLVAzNFUp6vy_Kv6B_2_wjFW1qDbb5zJ-YAnmtNbp3QWh1RLJHHwe-Db/exec', $('form').serialize() );
-      ).done(function () {
-            liff.sendMessages([{
-                'type': 'text',
-                'text': "フォームへのご回答ありがとうございます！受付完了しました。"
-            }]).then(function() {
-                window.alert('Message sent');
-            }).catch(function(error) {
-                window.alert('Error sending message: ' + error);
-   }})
-         });
-    
+      event.preventDefault();
+      $.post( 'https://script.google.com/macros/s/AKfycbynmNsC6t6rsLVAzNFUp6vy_Kv6B_2_wjFW1qDbb5zJ-YAnmtNbp3QWh1RLJHHwe-Db/exec', $('form').serialize() );
+    });
   </script>
   
 </body>
