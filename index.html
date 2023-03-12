@@ -65,18 +65,37 @@
       const idToken = liff.getDecodedIDToken();
       const userId = idToken.sub;
       $('form').append(`<input type="hidden" name="userId" value="${userId}">`);
-      $('form').append(`<input type="submit" class="mt-4 btn btn-primary"　name="closeWindowButton" value="送信">`);
+      $('form').append(`<input type="submit" class="mt-4 btn btn-primary" value="送信">`);
     })
 
     $('form').submit(function( event ) {
       event.preventDefault();
       $.post( 'https://script.google.com/macros/s/AKfycbynmNsC6t6rsLVAzNFUp6vy_Kv6B_2_wjFW1qDbb5zJ-YAnmtNbp3QWh1RLJHHwe-Db/exec', $('form').serialize() );
-      var msg = `申し込み受付けました`;
-        sendText(msg);
-
-        return false;
     });
     
+  </script>
+
+  <script>
+    // sendMessages call
+            liff.sendMessages([{
+                'type': 'text',
+                'text': "フォームへのご回答ありがとうございます！受付完了しました。"
+            }]).then(function() {
+                window.alert('Message sent');
+            }).catch(function(error) {
+                window.alert('Error sending message: ' + error);
+    
+  </script>
+
+  <script>
+         // closeWindow call
+        function() {
+        if (!liff.isInClient()) {
+            sendAlertIfNotInClient();
+        } else {
+            liff.closeWindow();
+        }
+    };
   </script>
 </body>
 </html>
