@@ -75,27 +75,5 @@
     
   </script>
 
-  <script>
-    // sendMessages call
-            liff.sendMessages([{
-                'type': 'text',
-                'text': "フォームへのご回答ありがとうございます！受付完了しました。"
-            }]).then(function() {
-                window.alert('Message sent');
-            }).catch(function(error) {
-                window.alert('Error sending message: ' + error);
-    
-  </script>
-
-  <script>
-         // closeWindow call
-        function() {
-        if (!liff.isInClient()) {
-            sendAlertIfNotInClient();
-        } else {
-            liff.closeWindow();
-        }
-    };
-  </script>
 </body>
 </html>
