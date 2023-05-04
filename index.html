@@ -33,12 +33,13 @@
         <div class="form-select-wrap" name="age" required>
           <select class="birthday-year">
           </select>
-          / 
+          年 
           <select class="birthday-month">
           </select>
-          /
+          月
           <select class="birthday-day">
           </select>
+          日
       </div>
     </div>
     <p class="mt-3">⑥緊急連絡先</p>
@@ -96,7 +97,7 @@ function createOptionForElements(elem, val) {
 }
 
 //年の生成
-for(let i = 1920; i <= 2020; i++) {
+for(let i = 2005; i <= 2023; i++) {
   createOptionForElements(userBirthdayYear, i);
 }
 //月の生成
